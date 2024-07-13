@@ -7,9 +7,11 @@ import org.hibernate.annotations.ColumnDefault
 import java.time.Instant
 
 @Entity
-@Table(name = "actor", schema = "public", indexes = [
-    Index(name = "idx_actor_last_name", columnList = "last_name")
-])
+@Table(
+    name = "actor", schema = "public", indexes = [
+        Index(name = "idx_actor_last_name", columnList = "last_name")
+    ]
+)
 open class Actor {
     @Id
     @ColumnDefault("nextval('actor_actor_id_seq'::regclass)")

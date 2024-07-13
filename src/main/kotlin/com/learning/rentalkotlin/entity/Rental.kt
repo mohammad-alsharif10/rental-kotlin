@@ -8,10 +8,16 @@ import org.hibernate.annotations.OnDeleteAction
 import java.time.Instant
 
 @Entity
-@Table(name = "rental", schema = "public", indexes = [
-    Index(name = "idx_unq_rental_rental_date_inventory_id_customer_id", columnList = "rental_date, inventory_id, customer_id", unique = true),
-    Index(name = "idx_fk_inventory_id", columnList = "inventory_id")
-])
+@Table(
+    name = "rental", schema = "public", indexes = [
+        Index(
+            name = "idx_unq_rental_rental_date_inventory_id_customer_id",
+            columnList = "rental_date, inventory_id, customer_id",
+            unique = true
+        ),
+        Index(name = "idx_fk_inventory_id", columnList = "inventory_id")
+    ]
+)
 open class Rental {
     @Id
     @ColumnDefault("nextval('rental_rental_id_seq'::regclass)")

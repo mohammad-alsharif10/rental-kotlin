@@ -2,7 +2,6 @@ package com.learning.rentalkotlin.entity
 
 import jakarta.persistence.Column
 import jakarta.persistence.Embeddable
-import jakarta.persistence.Entity
 import jakarta.validation.constraints.NotNull
 import org.hibernate.Hibernate
 import java.io.Serializable

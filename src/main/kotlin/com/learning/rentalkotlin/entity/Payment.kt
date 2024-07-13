@@ -9,11 +9,13 @@ import java.math.BigDecimal
 import java.time.Instant
 
 @Entity
-@Table(name = "payment", schema = "public", indexes = [
-    Index(name = "idx_fk_customer_id", columnList = "customer_id"),
-    Index(name = "idx_fk_staff_id", columnList = "staff_id"),
-    Index(name = "idx_fk_rental_id", columnList = "rental_id")
-])
+@Table(
+    name = "payment", schema = "public", indexes = [
+        Index(name = "idx_fk_customer_id", columnList = "customer_id"),
+        Index(name = "idx_fk_staff_id", columnList = "staff_id"),
+        Index(name = "idx_fk_rental_id", columnList = "rental_id")
+    ]
+)
 open class Payment {
     @Id
     @ColumnDefault("nextval('payment_payment_id_seq'::regclass)")

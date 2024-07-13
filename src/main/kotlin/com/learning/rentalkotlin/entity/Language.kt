@@ -1,5 +1,6 @@
 package com.learning.rentalkotlin.entity
 
+import com.learning.rentalkotlin.dto.LanguageDto
 import jakarta.persistence.Column
 import jakarta.persistence.Entity
 import jakarta.persistence.Id
@@ -26,4 +27,8 @@ open class Language {
     @ColumnDefault("now()")
     @Column(name = "last_update", nullable = false)
     open var lastUpdate: Instant? = null
+
+    fun toLanguageDtp(): LanguageDto {
+        return LanguageDto(id, name, lastUpdate);
+    }
 }

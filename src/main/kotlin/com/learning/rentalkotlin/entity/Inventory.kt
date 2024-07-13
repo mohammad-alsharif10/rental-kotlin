@@ -8,9 +8,11 @@ import org.hibernate.annotations.OnDeleteAction
 import java.time.Instant
 
 @Entity
-@Table(name = "inventory", schema = "public", indexes = [
-    Index(name = "idx_store_id_film_id", columnList = "store_id, film_id")
-])
+@Table(
+    name = "inventory", schema = "public", indexes = [
+        Index(name = "idx_store_id_film_id", columnList = "store_id, film_id")
+    ]
+)
 open class Inventory {
     @Id
     @ColumnDefault("nextval('inventory_inventory_id_seq'::regclass)")

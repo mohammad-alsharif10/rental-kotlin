@@ -10,11 +10,13 @@ import java.time.Instant
 import java.time.LocalDate
 
 @Entity
-@Table(name = "customer", schema = "public", indexes = [
-    Index(name = "idx_fk_store_id", columnList = "store_id"),
-    Index(name = "idx_last_name", columnList = "last_name"),
-    Index(name = "idx_fk_address_id", columnList = "address_id")
-])
+@Table(
+    name = "customer", schema = "public", indexes = [
+        Index(name = "idx_fk_store_id", columnList = "store_id"),
+        Index(name = "idx_last_name", columnList = "last_name"),
+        Index(name = "idx_fk_address_id", columnList = "address_id")
+    ]
+)
 open class Customer {
     @Id
     @ColumnDefault("nextval('customer_customer_id_seq'::regclass)")

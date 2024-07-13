@@ -8,9 +8,11 @@ import org.hibernate.annotations.OnDeleteAction
 import java.time.Instant
 
 @Entity
-@Table(name = "film_actor", schema = "public", indexes = [
-    Index(name = "idx_fk_film_id", columnList = "film_id")
-])
+@Table(
+    name = "film_actor", schema = "public", indexes = [
+        Index(name = "idx_fk_film_id", columnList = "film_id")
+    ]
+)
 open class FilmActor {
     @EmbeddedId
     open var id: FilmActorId? = null
